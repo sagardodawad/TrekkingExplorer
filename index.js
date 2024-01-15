@@ -13,7 +13,6 @@ import crypto from "crypto";
 import bcrypt from "bcrypt";
 import nodemailer from "nodemailer";
 
-const path=require("path");
 
 // Change this line in your index.js file
 import
@@ -52,10 +51,6 @@ app.use("/api/v1/tours", tourRoute);
 app.use("/api/v1/users", userRoute);
 app.use("/api/v1/reviews", reviewRoute);
 app.use("/api/v1/booking", bookingRoute);
-app.use(express.join(__dirname,'./frontend/build'));
-app.get('*',function(req, res){
-  res.sendFile(path.join(__dirname,'./frontend/build/index.html'));
-})
 
 const hashPassword = async (password) => {
   const saltRounds = 10;
